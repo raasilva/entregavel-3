@@ -290,11 +290,11 @@ console.log(nomechakraPersonagens.join("\n"));
 //14. Gere um vetor com o "poder total" (chakra multiplicado pela idade) de cada personagem.
 const poderTotal = personagensNaruto
   .filter(
-    (personagen) => personagem.nome && personagem.chakra * personagens.idade,
+    (personagem) => personagem.nome && personagem.chakra && personagem.idade,
   )
-  .map(
-    (personagem) =>
-      `${personagem.nome} - ${personagem.chakra * personagens.idade}`,
-  );
-console.log("Nome - Poder total: ");
-console.log(poderTotal);
+  .map((personagem) => {
+    const total = personagem.chakra * personagem.idade;
+    return `${personagem.nome} - Poder total: ${total}`;
+  });
+console.log("Nome - Poder total dos personagens:");
+console.log(poderTotal.join("\n"));
