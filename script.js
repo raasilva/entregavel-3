@@ -182,22 +182,30 @@ const personagensNaruto = [
 ];
 
 //1. Selecione os personagens que possuem chakra estritamente maior que 80.
-const ninjasPoderosos = personagensNaruto.filter((p) => p.chakra > 80);
+const ninjasPoderosos = personagensNaruto.filter(
+  (personagem) => personagem.chakra > 80,
+);
 
 //2. Liste o nome de todos os personagens que possuem Kekkei Genkai.
 const listaKekkei = personagensNaruto
-  .filter((p) => p.possuiKekkeiGenkai)
-  .map((p) => p.nome);
+  .filter((personagem) => personagem.possuiKekkeiGenkai)
+  .map((personagem) => personagem.nome);
 
 //3. Obtenha o chakra de todos os personagens que são "Ninja Renegado".
 const chakraForaDaLei = personagensNaruto
-  .filter((p) => p.nivel === "Ninja Renegado")
-  .map((p) => p.chakra);
+  .filter((personagem) => personagem.nivel === "Ninja Renegado")
+  .map((personagem) => personagem.chakra);
 
 //4. Qual a soma total das idades de todos os personagens do vetor?
-const somaIdades = personagensNaruto.reduce((acc, p) => acc + p.idade, 0);
+const somaIdades = personagensNaruto.reduce(
+  (acc, personagem) => acc + personagem.idade,
+  0,
+);
 
 //5. Crie um vetor com o nome dos personagens que possuem mais de 50 de chakra E são da Folha.
 const eliteFolha = personagensNaruto
-  .filter((p) => p.chakra > 50 && p.ehDaFolha)
-  .map((p) => p.nome);
+  .filter((personagem) => personagem.chakra > 50 && personagem.ehDaFolha)
+  .map((personagem) => personagem.nome);
+
+//6. Nome do personagem com a maior e com a menor razão chakra-idade.
+const razoes = personagensNaruto;
