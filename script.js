@@ -272,3 +272,29 @@ const idadePersonagens = personagensNaruto
   .filter((personagem) => personagem.idade)
   .map((personagem) => personagem.idade);
 console.log("As idades dos personagens são: ", idadePersonagens);
+
+//12. Gere um vetor de strings no formato: "Nome - Nível".
+const listannPersonagens = personagensNaruto
+  .filter((personagem) => personagem.nome && personagem.nivel)
+  .map((personagem) => `${personagem.nome} - ${personagem.nivel}`);
+console.log("Nome - Nível dos personagens:");
+console.log(listannPersonagens.join("\n"));
+
+//13. Crie um vetor de objetos contendo apenas nome e chakra de cada ninja.
+const nomechakraPersonagens = personagensNaruto
+  .filter((personagem) => personagem.nome && personagem.chakra)
+  .map((personagem) => `${personagem.nome} - ${personagem.chakra}`);
+console.log("Nome - Chakra dos personagens:");
+console.log(nomechakraPersonagens.join("\n"));
+
+//14. Gere um vetor com o "poder total" (chakra multiplicado pela idade) de cada personagem.
+const poderTotal = personagensNaruto
+  .filter(
+    (personagen) => personagem.nome && personagem.chakra * personagens.idade,
+  )
+  .map(
+    (personagem) =>
+      `${personagem.nome} - ${personagem.chakra * personagens.idade}`,
+  );
+console.log("Nome - Poder total: ");
+console.log(poderTotal);
