@@ -251,3 +251,12 @@ const naoVilaFolha = personagensNaruto
   .map((personagem) => personagem.nome);
 
 console.log("Os personagens que não são da Folha são: ", naoVilaFolha);
+
+//9. Encontre todos os personagens que possuem sobrenome registrado.
+const comSobrenome = personagensNaruto
+  .filter((personagem) => personagem.sobrenome !== null)
+  .map((personagem) => personagem.nome);
+console.log(
+  "Os personagens que possuem sobrenome registrado são: ",
+  comSobrenome,
+);
