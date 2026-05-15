@@ -298,3 +298,19 @@ const poderTotal = personagensNaruto
   });
 console.log("Nome - Poder total dos personagens:");
 console.log(poderTotal.join("\n"));
+
+//15. Crie um vetor de nomes de personagens (cuidado com os sem sobrenome).
+const nomesPersonagens = personagensNaruto
+  .filter((personagem) => personagem.nome && personagem.sobrenome)
+  .map((personagem) => `${personagem.nome} - ${personagem.sobrenome}`);
+console.log("Nome - Sobrenome dos personagens: ");
+console.log(nomesPersonagens.join("\n"));
+
+//16. Crie um vetor somente com os personagens da Folha que são menores de idade ( < 18).
+const menorIdade = personagensNaruto
+  .filter(
+    (personagem) => personagem.ehDaFolha === true && personagem.idade < 18,
+  )
+  .map((personagem) => `${personagem.idade} - ${personagem.nome}`);
+console.log("Personagens menores de idade que moram na folha:");
+console.log(menorIdade.join("\n"));
