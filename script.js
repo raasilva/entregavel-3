@@ -244,3 +244,10 @@ const nivelSannin = personagensNaruto
   .map((personagem) => personagem.nome);
 
 console.log("Personagens com nível Sannin: ", nivelSannin);
+
+//8.Filtre todos os personagens que NÃO são da Vila da Folha.
+const naoVilaFolha = personagensNaruto
+  .filter((personagem) => personagem.ehDaFolha === false)
+  .map((personagem) => personagem.nome);
+
+console.log("Os personagens que não são da Folha são: ", naoVilaFolha);
