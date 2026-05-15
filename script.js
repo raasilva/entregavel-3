@@ -185,16 +185,27 @@ const personagensNaruto = [
 const ninjasPoderosos = personagensNaruto.filter(
   (personagem) => personagem.chakra > 80,
 );
+console.log(
+  "Os personagens que possuem chakra maior que 80 são:",
+  ninjasPoderosos,
+);
 
 //2. Liste o nome de todos os personagens que possuem Kekkei Genkai.
 const listaKekkei = personagensNaruto
   .filter((personagem) => personagem.possuiKekkeiGenkai)
   .map((personagem) => personagem.nome);
 
+console.log("Lista dos personagens que possuem Kekkei Genkai: ", listaKekkei);
+
 //3. Obtenha o chakra de todos os personagens que são "Ninja Renegado".
 const chakraForaDaLei = personagensNaruto
   .filter((personagem) => personagem.nivel === "Ninja Renegado")
   .map((personagem) => personagem.chakra);
+
+console.log(
+  "O chakra dos personagem que são Ninja Renegagado: ",
+  chakraForaDaLei,
+);
 
 //4. Qual a soma total das idades de todos os personagens do vetor?
 const somaIdades = personagensNaruto.reduce(
@@ -202,10 +213,27 @@ const somaIdades = personagensNaruto.reduce(
   0,
 );
 
+console.log("A soma das idades dos personagens são: ", somaIdades);
+
 //5. Crie um vetor com o nome dos personagens que possuem mais de 50 de chakra E são da Folha.
 const eliteFolha = personagensNaruto
   .filter((personagem) => personagem.chakra > 50 && personagem.ehDaFolha)
   .map((personagem) => personagem.nome);
 
+console.log(
+  "O nome dos personagens que possuem mais de 50 de chakra e são da Folha são: ",
+  eliteFolha,
+);
+
 //6. Nome do personagem com a maior e com a menor razão chakra-idade.
-const razoes = personagensNaruto;
+const razoes = personagensNaruto.map((personagem) => ({
+  nome: personagem.nome,
+  razao: personagem.chakra / personagem.idade,
+}));
+
+const maiorRazao = razoes.reduce((max, personagem) =>
+  personagem.razao > max.razao ? personagem : max,
+);
+const menorRazao = razoes.reduce((min, p) => (p.razao < min.razao ? p : min));
+console.log("Maior razão chakra/idade:", maiorRazao.nome);
+console.log("Menor razão chakra/idade:", menorRazao.nome);
