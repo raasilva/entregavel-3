@@ -182,9 +182,9 @@ const personagensNaruto = [
 ];
 
 //1. Selecione os personagens que possuem chakra estritamente maior que 80.
-const ninjasPoderosos = personagensNaruto.filter(
-  (personagem) => personagem.chakra > 80,
-);
+const ninjasPoderosos = personagensNaruto
+  .filter((personagem) => personagem.chakra > 80)
+  .map((personagem) => personagem.nome);
 console.log(
   "Os personagens que possuem chakra maior que 80 são:",
   ninjasPoderosos,
@@ -260,3 +260,9 @@ console.log(
   "Os personagens que possuem sobrenome registrado são: ",
   comSobrenome,
 );
+
+//10.Filtre os personagens que têm exatamente 17 anos.
+const idade17 = personagensNaruto
+  .filter((personagem) => personagem.idade === 17)
+  .map((personagem) => personagem.nome);
+console.log("Os personagens com 17 anos são: ", idade17);
