@@ -237,3 +237,10 @@ const maiorRazao = razoes.reduce((max, personagem) =>
 const menorRazao = razoes.reduce((min, p) => (p.razao < min.razao ? p : min));
 console.log("Maior razão chakra/idade:", maiorRazao.nome);
 console.log("Menor razão chakra/idade:", menorRazao.nome);
+
+//7. Crie um vetor com os personagens que possuem nível "Sannin".
+const nivelSannin = personagensNaruto
+  .filter((personagem) => personagem.nivel === "Sannin")
+  .map((personagem) => personagem.nome);
+
+console.log("Personagens com nível Sannin: ", nivelSannin);
