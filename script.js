@@ -266,3 +266,9 @@ const idade17 = personagensNaruto
   .filter((personagem) => personagem.idade === 17)
   .map((personagem) => personagem.nome);
 console.log("Os personagens com 17 anos são: ", idade17);
+
+//11. Crie um vetor apenas com as idades dos personagens.
+const idadePersonagens = personagensNaruto
+  .filter((personagem) => personagem.idade)
+  .map((personagem) => personagem.idade);
+console.log("As idades dos personagens são: ", idadePersonagens);
