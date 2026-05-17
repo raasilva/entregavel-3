@@ -207,7 +207,7 @@ console.log(
   chakraForaDaLei,
 );
 
-//4. Qual a soma total das idades de todos os personagens do vetor?
+//4. Qual a soma total das idades de todos os personagens do vetor?``
 const somaIdades = personagensNaruto.reduce(
   (acc, personagem) => acc + personagem.idade,
   0,
@@ -314,3 +314,42 @@ const menorIdade = personagensNaruto
   .map((personagem) => `${personagem.idade} - ${personagem.nome}`);
 console.log("Personagens menores de idade que moram na folha:");
 console.log(menorIdade.join("\n"));
+
+// 17.Quantos personagens possuem Kekkei-genkai?
+const totalKekkei = personagensNaruto.filter(
+  (personagem) => personagem.possuiKekkeiGenkai,
+).length;
+
+console.log("Total de personagens com Kekkei Genkai:", totalKekkei);
+
+// 18.One-liner: chakras dos personagens que são Jonin:
+const chakrasJonin = personagensNaruto
+  .filter((p) => p.nivel === "Jonin")
+  .map((p) => p.chakra);
+
+console.log("Chakras dos Jonin:", chakrasJonin);
+
+// 19. Chakra total, média, menor e maior chakra:
+const chakraTotal = personagensNaruto.reduce((acc, p) => acc + p.chakra, 0);
+const chakraMedia = chakraTotal / personagensNaruto.length;
+const chakraMenor = personagensNaruto.reduce((min, p) =>
+  p.chakra < min.chakra ? p : min,
+).chakra;
+const chakraMaior = personagensNaruto.reduce((max, p) =>
+  p.chakra > max.chakra ? p : max,
+).chakra;
+
+console.log("Chakra total:", chakraTotal);
+console.log("Chakra médio:", chakraMedia.toFixed(2));
+console.log("Menor chakra:", chakraMenor);
+console.log("Maior chakra:", chakraMaior);
+
+// 20. Razão chakra-idade média dos chunin:
+const chunins = personagensNaruto.filter((p) => p.nivel === "Chunin");
+const mediaRazaoChunin =
+  chunins.reduce((acc, p) => acc + p.chakra / p.idade, 0) / chunins.length;
+
+console.log(
+  "Razão chakra-idade média dos Chunin:",
+  mediaRazaoChunin.toFixed(2),
+);
